@@ -1,11 +1,11 @@
 /*  =========================================================================
     tools.typography
-    ========================================================================= */
+/   ========================================================================= */
 
 /*  Use/Forward rules
     `@use` or `@forward` everything you need here from other files.
     These can include variables, mixins & other includes.
-    ========================================================================= */
+/   ========================================================================= */
 
 @use 'sass:meta';
 @use 'sass:math';
@@ -35,7 +35,7 @@
 
       // subtract 1 line:
       @include typography.font-size(24px, $modifier: -1);
-    ========================================================================= */
+/   ========================================================================= */
 
 @mixin font-size($font-size, $line-height: auto, $modifier: 0, $important: false) {
   @if (meta.type-of($font-size) == number) {

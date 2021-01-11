@@ -2,12 +2,12 @@
     generic.reset
     A thin layer on top of `@csstools/normalize.css` that provides a starting
     point more suitable for web applications.
-    ========================================================================= */
+/   ========================================================================= */
 
 /*  Use rules
     `@use` everything you need here from other files. Variables, mixins &
     other includes.
-    ========================================================================= */
+/   ========================================================================= */
 
 @use '../../settings/defaults';
 @use '../../tools/space';
