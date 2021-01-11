@@ -18,12 +18,12 @@
   ],
   "scripts": {
     "test": "npm run lint && npm run build && npm run gzip",
-    "lint": "stylelint \"**/*.scss\"",
+    "lint": "stylelint \"./**/*.scss\"",
     "gzip": "gzip-size _test/css/index.css",
-    "postcss": "postcss _test/css/**/*.css --replace",
-    "sass": "sass index.scss:_test/css/index.css _test/scss/test.scss:_test/css/test.css --no-source-map",
+    "postcss": "postcss ./_test/**/*.css ./_example/**/*.css --replace",
+    "sass": "sass index.scss:_test/css/index.css _test/scss/test.scss:_test/css/test.css _example/scss/styles.scss:_example/css/styles.css --no-source-map",
     "build": "npm run sass && npm run postcss",
-    "serve": "browser-sync start --server --files '_test/css/*.css, ./**/*.html' --index 'test.html'",
+    "serve": "browser-sync start --server --files './**/*.css, ./**/*.html' --index 'test.html'",
     "watch": "nodemon -e scss -x \"npm run test\"",
     "start": "concurrently 'npm run serve' 'npm run watch'"
   },
