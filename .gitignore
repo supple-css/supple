@@ -3,5 +3,5 @@
 node_modules
 npm-debug.log
 yarn.lock
-_test/css/*
+test/css/*
 _example/css/*

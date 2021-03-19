@@ -1,6 +1,6 @@
 # Supple (S)CSS framework <img src="https://supple-kit.github.io/supple-css/supple-logo.svg" alt="supple Logo" width="90" height="90" align="right">
 
-[![npm (scoped)](https://img.shields.io/npm/v/supple.svg)](https://github.com/supple-css/supple/releases) [![npm](https://img.shields.io/npm/l/supple.svg)](https://github.com/supple-css/supple/blob/master/LICENSE) [![changelog](https://img.shields.io/badge/changelog-md-blue.svg)](https://github.com/supple-css/supple/blob/master/CHANGELOG.md)
+[![npm (scoped)](https://img.shields.io/npm/v/@supple-kit/supple-css)](https://github.com/supple-kit/supple-css/releases) [![npm](https://img.shields.io/github/license/supple-kit/supple-css)](https://github.com/supple-kit/supple-css/blob/master/LICENSE) [![changelog](https://img.shields.io/badge/changelog-md-blue.svg)](https://github.com/supple-kit/supple-css/blob/master/CHANGELOG.md)
 
 ## Introduction
 
@@ -58,7 +58,7 @@ Supple is built with the latest version of [Sass](https://sass-lang.com/) so you
 
 ### Install
 
-* npm: `npm install @supple-kit/supple-css@beta`
+* npm: `npm install @supple-kit/supple-css`
 
 ## Getting started
 
