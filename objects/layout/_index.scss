@@ -50,12 +50,14 @@ $selector: '> *';
   --layout-gap: var(--gap);
   --layout-block-gap: var(--layout-gap);
   --layout-inline-gap: var(--layout-gap);
+  --layout-block-gap-offset: calc(-1 * var(--layout-block-gap));
+  --layout-inline-gap-offset: calc(-1 * var(--layout-inline-gap));
   display: flex;
   flex-flow: row wrap;
   align-items: flex-start;
   padding: 0; /* [1] */
-  margin-block-start: calc(-1 * var(--layout-block-gap));
-  margin-inline-start: calc(-1 * var(--layout-inline-gap)); /* [1,2] */
+  margin-block-start: var(--layout-block-gap-offset); /* [2] */
+  margin-inline-start: var(--layout-inline-gap-offset); /* [1,2] */
   list-style: none; /* [1] */
 
   /**
@@ -140,27 +142,6 @@ $selector: '> *';
 
 
 /**
- * Element: cell
- * Only use cell wrapper element when everything else fails 😅
- */
-.o-layout__cell {
-  --layout-inline-gap-internal: 0px; // stylelint-disable-line
-  --layout-block-gap-internal: 0px; // stylelint-disable-line
-  padding-block-start: var(--layout-block-gap);
-  padding-inline-start: var(--layout-inline-gap);
-
-  // Old way to stretch inner items
-  .o-layout--stretch > & {
-    display: flex;
-
-    #{$selector} {
-      inline-size: 100%; /* [1] */
-    }
-  }
-}
-
-
-/**
  * Modifier: fill
  * allow cells to equal distribute width
  */
@@ -229,3 +210,32 @@ $selector: '> *';
   margin-inline-end: auto;
 }
 
+
+/**
+ * Element: cell
+ * Only use cell wrapper element when everything else fails 😅
+ */
+.o-layout__cell {
+  --layout-inline-gap-internal: 0px; // stylelint-disable-line
+  --layout-block-gap-internal: 0px; // stylelint-disable-line
+  padding-block-start: var(--layout-block-gap);
+  padding-inline-start: var(--layout-inline-gap);
+
+  // Old way to stretch inner items
+  .o-layout--stretch > & {
+    display: flex;
+
+    #{$selector} {
+      inline-size: 100%;
+    }
+  }
+}
+
+
+/*  Overrides
+    For when layout is directly used in other modules
+/   ========================================================================= */
+
+.o-flow > .o-layout {
+  margin-block-start: calc(var(--layout-block-gap-offset) + var(--flow-gap));
+}
