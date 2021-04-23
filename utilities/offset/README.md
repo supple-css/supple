@@ -1,8 +1,15 @@
-# Supple CSS | utilities.offset
+---
+layout: layouts/lithe/pattern.njk
+tags:
+title: utilities.offset
+metaDesc: 'Utility which provides a offset custom property for use in objects or components which can handle those offsets.'
+permalink: utilities/offset/index.html
+eleventyNavigation:
+  key: Offset
+  parent: Utilities
+---
 
 Utility which provides a offset custom property for use in objects or components which can handle those offsets eg. `object.layout`.
-
-Read more about [Supple CSS](https://github.com/supple-css/supple).
 
 ## Table of contents
 

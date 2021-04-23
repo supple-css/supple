@@ -1,8 +1,15 @@
-# Supple CSS | objects.aspect-ratio
+---
+layout: layouts/lithe/pattern.njk
+tags:
+title: objects.aspect-ratio
+metaDesc: 'For use with multi-media embeds that need to retain a specific aspect ratio but adapt to elements of variable widths.'
+permalink: objects/aspect-ratio/index.html
+eleventyNavigation:
+  key: Aspect-ratio
+  parent: Objects
+---
 
 For use with multi-media embeds such as videos, images or slideshows, that need to retain a specific aspect ratio but adapt to elements of variable widths.
-
-Read more about [Supple CSS](https://github.com/supple-css/supple).
 
 ## Table of contents
 

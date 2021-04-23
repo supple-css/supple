@@ -1,8 +1,15 @@
-# Supple CSS | utilities.colstart
+---
+layout: layouts/lithe/pattern.njk
+tags:
+title: utilities.colstart
+metaDesc: 'Utility which provides a colstart custom property for use in objects or components which can handle those colstarts.'
+permalink: utilities/colstart/index.html
+eleventyNavigation:
+  key: Colstart
+  parent: Utilities
+---
 
 Utility which provides a colstart custom property for use in objects or components which can handle those colstarts eg. `object.mesh`.
-
-Read more about [Supple CSS](https://github.com/supple-css/supple).
 
 ## Table of contents
 

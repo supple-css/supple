@@ -1,8 +1,15 @@
-# Supple CSS | utilities.hidden
+---
+layout: layouts/lithe/pattern.njk
+tags:
+title: utilities.hidden
+metaDesc: 'Hides an element completely from flow and screenreaders.'
+permalink: utilities/hidden/index.html
+eleventyNavigation:
+  key: Hidden
+  parent: Utilities
+---
 
 Hides an element completely from flow and screenreaders.
-
-Read more about [Supple CSS](https://github.com/supple-css/supple).
 
 ## Table of contents
 

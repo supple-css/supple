@@ -1,8 +1,15 @@
-# Supple CSS | utilities.clearfix
+---
+layout: layouts/lithe/pattern.njk
+tags:
+title: utilities.clearfix
+metaDesc: 'Clears floats.'
+permalink: utilities/clearfix/index.html
+eleventyNavigation:
+  key: Clearfix
+  parent: Utilities
+---
 
 Clears floats.
-
-Read more about [Supple CSS](https://github.com/supple-css/supple).
 
 ## Table of contents
 

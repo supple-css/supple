@@ -1,8 +1,15 @@
-# Supple CSS | generic.reset
+---
+layout: layouts/lithe/pattern.njk
+tags:
+title: generic.reset
+metaDesc: 'A reset of sensible defaults, roughly based on Andy Bell’s excellent A Modern CSS Reset'
+permalink: generic/reset/index.html
+eleventyNavigation:
+  key: Reset
+  parent: Generic
+---
 
 A reset of sensible defaults, roughly based on Andy Bell's excellent [A Modern CSS Reset](https://hankchizljaw.com/wrote/a-modern-css-reset/). Combined with Supple's vertical rhythm it provides a powerful reset for web applications.
-
-Read more about [Supple CSS](https://github.com/supple-css/supple).
 
 ## Table of contents
 

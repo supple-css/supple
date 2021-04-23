@@ -1,8 +1,15 @@
-# Supple CSS | objects.flow
+---
+layout: layouts/lithe/pattern.njk
+tags:
+title: objects.flow
+metaDesc: 'Create flow and rhythm between elements.'
+permalink: objects/flow/index.html
+eleventyNavigation:
+  key: Flow
+  parent: Objects
+---
 
 Create flow and rhythm between elements. As per: https://every-layout.dev/layouts/stack/.
-
-Read more about [Supple CSS](https://github.com/supple-css/supple).
 
 ## Table of contents
 

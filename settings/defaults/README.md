@@ -1,8 +1,15 @@
-# Supple CSS | settings.defaults
+---
+layout: layouts/lithe/pattern.njk
+tags:
+title: settings.defaults
+metaDesc: 'Supple default variables, without this file the framework won’t work'
+permalink: settings/defaults/index.html
+eleventyNavigation:
+  key: Defaults
+  parent: Settings
+---
 
 This file contains the Supple default variables, without this file the framework won't work.
-
-Read more about [Supple CSS](https://github.com/supple-css/supple).
 
 ## Table of contents
 

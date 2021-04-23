@@ -1,8 +1,15 @@
-# Supple CSS | utilities.columns
+---
+layout: layouts/lithe/pattern.njk
+tags:
+title: utilities.columns
+metaDesc: 'Utility which provides a columns custom property for use in objects or components which can handle those columns.'
+permalink: utilities/columns/index.html
+eleventyNavigation:
+  key: Columns
+  parent: Utilities
+---
 
 Utility which provides a columns custom property for use in objects or components which can handle those columns eg. `object.mesh` and `object.layout`.
-
-Read more about [Supple CSS](https://github.com/supple-css/supple).
 
 ## Table of contents
 

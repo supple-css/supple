@@ -1,8 +1,15 @@
-# Supple CSS | objects.retain
+---
+layout: layouts/lithe/pattern.njk
+tags:
+title: objects.retain
+metaDesc: 'Creates a wrapper around a block of content, centers, adds padding and retains it to your desired size.'
+permalink: objects/retain/index.html
+eleventyNavigation:
+  key: Retain
+  parent: Objects
+---
 
 Creates a wrapper around a block of content, centers, adds padding and retains it to your desired size.
-
-Read more about [Supple CSS](https://github.com/supple-css/supple).
 
 ## Table of contents
 

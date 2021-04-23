@@ -1,10 +1,17 @@
-# Supple CSS | objects.layout
+---
+layout: layouts/lithe/pattern.njk
+tags:
+title: objects.layout
+metaDesc: 'Layout uses flexbox & Custom Properties for a flexible, fluid & extensible layout system. You can horizontally arrange items or use it as a full grid system.'
+permalink: objects/layout/index.html
+eleventyNavigation:
+  key: Layout
+  parent: Objects
+---
 
 Layout makes use of `flexbox` & Custom Properties to provide for a flexible, fluid & extensible layout system. You can horizontally(on the inline axis) arrange items or even use it as a full fledged traditional grid system.
 
-If you want to arrange items over 2 dimensions (horizontal & vertical) we recommend using [objects.mesh](../mesh).
-
-Read more about [Supple CSS](https://github.com/supple-css/supple).
+If you want to arrange items over 2 dimensions (horizontal & vertical) we recommend using [objects.mesh](../mesh.html).
 
 ## Table of contents
 
@@ -36,9 +43,16 @@ A simple layout is easy to create. A layout container can have any number of chi
   <div><!-- content --></div>
   <div><!-- content --></div>
   <div><!-- content --></div>
-  <div><!-- content --></div>
 </div>
 ```
+
+<div class="o-fixture">
+  <div class="o-layout  o-layout--fill  o-layout--gap-base">
+    <div class="o-fixture__box">fill</div>
+    <div class="o-fixture__box">fill</div>
+    <div class="o-fixture__box">fill</div>
+  </div>
+</div>
 
 For more granular control over layout make use of modifiers, custom properties or sizing utilities.
 

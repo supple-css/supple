@@ -1,8 +1,15 @@
-# Supple CSS | objects.list-clean
+---
+layout: layouts/lithe/pattern.njk
+tags:
+title: objects.list-clean
+metaDesc: 'Strip appearance from lists by removing their bullets and indents.'
+permalink: objects/list-clean/index.html
+eleventyNavigation:
+  key: List-clean
+  parent: Objects
+---
 
 Strip appearance from lists by removing their bullets and indents.
-
-Read more about [Supple CSS](https://github.com/supple-css/supple).
 
 ## Table of contents
 

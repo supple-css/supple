@@ -1,8 +1,15 @@
-# Supple CSS | utilities.colspan
+---
+layout: layouts/lithe/pattern.njk
+tags:
+title: utilities.colspan
+metaDesc: 'Utility which provides a colspan custom property for use in objects or components which can handle those colspans.'
+permalink: utilities/colspan/index.html
+eleventyNavigation:
+  key: Colspan
+  parent: Utilities
+---
 
 Utility which provides a colspan custom property for use in objects or components which can handle those colspans eg. `object.layout` or `object.mesh`.
-
-Read more about [Supple CSS](https://github.com/supple-css/supple).
 
 ## Table of contents
 

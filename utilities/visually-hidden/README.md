@@ -1,4 +1,13 @@
-# Supple CSS | utilities.visually-hidden
+---
+layout: layouts/lithe/pattern.njk
+tags:
+title: utilities.visually-hidden
+metaDesc: 'Hides an element visually while still allowing the content to be accessible to assistive technology.'
+permalink: utilities/visually-hidden/index.html
+eleventyNavigation:
+  key: Visually-hidden
+  parent: Utilities
+---
 
 Hides an element visually while still allowing the content to be accessible to assistive technology, e.g. screen readers.
 
@@ -18,9 +27,9 @@ Read more about [Supple CSS](https://github.com/supple-css/supple).
 ```html
 <button>
   This button has text that is
-  <span class="u-visually-hidden"
-    >hidden visually but still available for screenreaders etc.</span
-  >
+  <span class="u-visually-hidden">
+    hidden visually but still available for screenreaders etc.
+  </span>
 </button>
 ```
 
@@ -31,10 +40,10 @@ When you set media queries in `$in-query` you can use them like this:
 ```html
 <button>
   This button has text that is
-  <span class="u-visually-hidden@lap"
-    >Hidden visually from lap breakpoint but still available for screenreaders
-    etc.</span
-  >
+  <span class="u-visually-hidden@lap">
+    Hidden visually from lap breakpoint but still available for screenreaders
+    etc.
+  </span>
 </button>
 ```
 

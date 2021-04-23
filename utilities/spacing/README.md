@@ -1,8 +1,15 @@
-# Supple CSS | utilities.spacing
+---
+layout: layouts/lithe/pattern.njk
+tags:
+title: utilities.spacing
+metaDesc: 'Utility classes to put specific spacing values onto elements. These include margin & padding by default but can be extended with say `inset` for positioning.'
+permalink: utilities/spacing/index.html
+eleventyNavigation:
+  key: Spacing
+  parent: Utilities
+---
 
 Utility classes to put specific spacing values onto elements. These include margin & padding by default but can be extended with say `inset` for positioning. Use these **only** to tweak layout on a micro level.
-
-Read more about [Supple CSS](https://github.com/supple-css/supple).
 
 ## Table of contents
 

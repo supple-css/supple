@@ -1,10 +1,17 @@
-# Supple CSS | objects.mesh
+---
+layout: layouts/lithe/pattern.njk
+tags:
+title: objects.mesh
+metaDesc: 'Mesh makes use of `grid` & Custom Properties to provide for a flexible, fluid & extensible grid system.'
+permalink: objects/mesh/index.html
+eleventyNavigation:
+  key: Mesh
+  parent: Objects
+---
 
 Mesh makes use of `grid` & Custom Properties to provide for a flexible, fluid & extensible grid system. In a declaritive way you can create a variety of different grid systems for every need.
 
 If you want to arrange items over 1 dimension (horizontal) I recommend using [objects.layout](../layout).
-
-Read more about [Supple CSS](https://github.com/supple-css/supple).
 
 ## Table of contents
 
