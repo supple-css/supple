@@ -1,0 +1,57 @@
+{% if navPages %}
+  <nav class="c-nav" role="navigation">
+    <h2 class="u-visually-hidden">{{navAriaLabel}}</h2>
+    <button class="c-nav__button" aria-expanded="false" data-module="nav">
+      {% include "partials/icons/hamburger.svg" %}
+      Menu
+    </button>
+    <ul class="c-nav__list  |  o-list-clean">
+    {%- for entry in navPages %}
+      {% set currentAttribute = '' %}
+      {% set activeClass = 'c-nav__item' %}
+
+      {% if entry.url == page.url %}
+        {% set currentAttribute = ' aria-current="page"' %}
+      {% endif %}
+
+      {% if entry.url in page.url %}
+        {% set activeClass = 'c-nav__item  |  is-active"' %}
+      {% endif %}
+
+      <li class="{{ activeClass | safe }}">
+        {% if entry.children.length %}
+          <h3 class="c-nav__category">{{ entry.title }}</h3>
+        {% else  %}
+        <a class="c-nav__link" href="{{ entry.url | url }}"{{ currentAttribute | safe }}>
+          {{ entry.title }}
+          {% include "partials/icons/arrow-down.svg" %}
+        </a>
+        {% endif  %}
+        {% if entry.children.length %}
+          <ul class="c-nav__sub-list  |  o-list-clean">
+            {%- for subEntry in entry.children %}
+              {% set currentAttribute = '' %}
+              {% set activeClass = 'c-nav__item' %}
+
+              {% if subEntry.url == page.url %}
+                {% set currentAttribute = ' aria-current="page"' %}
+              {% endif %}
+
+              {% if subEntry.url in page.url %}
+                {% set activeClass = 'c-nav__item  |  is-active' %}
+              {% endif %}
+
+              <li class="{{ activeClass | safe }}">
+                <a class="c-nav__link" href="{{ subEntry.url | url }}"{{ currentAttribute | safe }}>
+                  {{ subEntry.title }}
+                  {% include "partials/icons/arrow-down.svg" %}
+                </a>
+              </li>
+            {%- endfor %}
+          </ul>
+        {% endif %}
+      </li>
+    {%- endfor %}
+    </ul>
+  </nav>
+{% endif %}

@@ -1,0 +1,45 @@
+/*  =========================================================================
+    lithe.objects.fixture
+/   ========================================================================= */
+
+/*  Use/Forward rules
+    `@use` or `@forward` everything you need here from other files.
+    These can include variables, mixins & other includes.
+/   ========================================================================= */
+
+@use "../settings/vars";
+@use "tools/space";
+@use 'tools/typography';
+
+/*  Variables
+/   ========================================================================= */
+
+/*  Functions/Mixins
+/   ========================================================================= */
+
+/*  Module
+/   ========================================================================= */
+
+.o-fixture,
+.o-fixture__box {
+  border-radius: space.get('tiny');
+}
+
+.o-fixture {
+  padding: space.get('small');
+  padding-inline-start: space.get('base');
+  padding-inline-end: space.get('base');
+  background-color: var(--color-fixture-background);
+}
+
+.o-fixture__box {
+  padding-block-start: space.get('tiny');
+  padding-block-end: space.get('tiny');
+  padding-inline-start: space.get('small');
+  padding-inline-end: space.get('small');
+  @include typography.font-size(vars.$font-size-eta);
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--color-light);
+  background-color: var(--color-brand-primary);
+}

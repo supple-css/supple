@@ -1,0 +1,52 @@
+/*  =========================================================================
+    lithe.objects.frame
+/   ========================================================================= */
+
+/*  Use/Forward rules
+    `@use` or `@forward` everything you need here from other files.
+    These can include variables, mixins & other includes.
+/   ========================================================================= */
+
+@use "tools/rem";
+@use "tools/space";
+@use "tools/responsive";
+
+/*  Variables
+/   ========================================================================= */
+
+/*  Functions/Mixins
+/   ========================================================================= */
+
+/*  Module
+/   ========================================================================= */
+
+.o-frame {
+  //
+}
+
+.o-frame__masthead {
+  padding: space.get('base');
+}
+
+.o-frame__body {
+  margin-block-end: space.get('base');
+}
+
+@include responsive.mq('desk') {
+  .o-frame {
+    display: flex;
+    justify-content: center;
+  }
+
+  .o-frame__masthead {
+    flex: 0 0 rem.convert(280px);
+    border-bottom: none;
+  }
+
+  .o-frame__body {
+    flex: 0 1 75ch;
+    min-inline-size: 0;
+    margin-block-start: space.get('base');
+    margin-inline-end: space.get('base');
+  }
+}

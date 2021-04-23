@@ -1,0 +1,15 @@
+{% extends 'layouts/lithe/_base.njk' %}
+
+{# Syntax highlighting #}
+{% block head %}
+  <style>{% include "assets/css/highlight.css" %}</style>
+{% endblock %}
+
+{% block content %}
+  <h1>{{title}}</h1>
+  {{ content | safe }}
+
+  {% set navAriaLabel = 'pattern navigation' %}
+  {% set navPages = collections.all | eleventyNavigation(eleventyNavigation.key) %}
+  {% include "partials/navigation.njk" %}
+{% endblock %}

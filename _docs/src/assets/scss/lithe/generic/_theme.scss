@@ -1,0 +1,43 @@
+/*  =========================================================================
+    lithe.settings.theme
+/   ========================================================================= */
+
+/*  Use/Forward rules
+    `@use` or `@forward` everything you need here from other files.
+    These can include variables, mixins & other includes.
+/   ========================================================================= */
+
+@use "../settings/vars";
+@use "../tools";
+
+/*  Variables
+/   ========================================================================= */
+
+:root {
+  --color-mode: 'light';
+  // brand
+  --color-light: #{vars.$color-light};
+  --color-gray: #{vars.$color-gray};
+  --color-dark-gray: #{vars.$color-dark-gray};
+  --color-dark: #{vars.$color-dark};
+  --color-brand-primary: #{vars.$color-brand-primary};
+  --color-brand-secondary: #{vars.$color-brand-secondary};
+  --color-brand-tertiary: #{vars.$color-brand-tertiary};
+  // main
+  --color-main-background: var(--color-light);
+  --color-main-text: var(--color-dark);
+  // fixture
+  --color-fixture-background: var(--color-gray);
+  // Syntax highlighting
+  --color-syn-high-bg: #{vars.$color-dark};
+  --color-syn-high-light: #{vars.$color-light};
+  --color-syn-high-dark-gray: #{vars.$color-dark-gray};
+  --color-syn-high-primary: #{vars.$color-brand-primary};
+  --color-syn-high-tertiary: #{vars.$color-brand-tertiary};
+
+  @include tools.dark-mode() {
+    --color-main-background: var(--color-brand-secondary);
+    --color-main-text: var(--color-light);
+    --color-fixture-background: var(--color-dark);
+  }
+}

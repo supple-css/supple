@@ -1,0 +1,32 @@
+/*  =========================================================================
+    lithe.components.main
+/   ========================================================================= */
+
+/*  Use/Forward rules
+    `@use` or `@forward` everything you need here from other files.
+    These can include variables, mixins & other includes.
+/   ========================================================================= */
+
+@use "tools/space";
+@use "tools/responsive";
+
+/*  Variables
+/   ========================================================================= */
+
+/*  Functions/Mixins
+/   ========================================================================= */
+
+/*  Module
+/   ========================================================================= */
+
+.c-main {
+  padding: space.get('base');
+  border-radius: space.get('tiny');
+  background-color: var(--color-main-background);
+  color: var(--color-main-text);
+
+  @include responsive.mq('desk') {
+    padding-inline-start: space.get('large');
+    padding-inline-end: space.get('large');
+  }
+}

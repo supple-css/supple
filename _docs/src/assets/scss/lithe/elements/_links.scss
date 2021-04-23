@@ -1,0 +1,27 @@
+/*  =========================================================================
+    lithe.elements.links
+/   ========================================================================= */
+
+/*  Use/Forward rules
+    `@use` or `@forward` everything you need here from other files.
+    These can include variables, mixins & other includes.
+/   ========================================================================= */
+
+/*  Variables
+/   ========================================================================= */
+
+/*  Functions/Mixins
+/   ========================================================================= */
+
+/*  Module
+/   ========================================================================= */
+
+a {
+  color: currentColor;
+  text-decoration-color: var(--color-brand-primary);
+
+  &:focus,
+  &:hover {
+    color: var(--color-brand-primary);
+  }
+}

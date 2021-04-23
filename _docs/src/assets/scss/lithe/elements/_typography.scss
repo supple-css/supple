@@ -1,0 +1,44 @@
+/*  =========================================================================
+    lithe.elements.topography
+/   ========================================================================= */
+
+/*  Use/Forward rules
+    `@use` or `@forward` everything you need here from other files.
+    These can include variables, mixins & other includes.
+/   ========================================================================= */
+
+@use "../settings/vars";
+@use 'tools/typography';
+
+/*  Variables
+/   ========================================================================= */
+
+/*  Functions/Mixins
+/   ========================================================================= */
+
+/*  Module
+/   ========================================================================= */
+
+h1 {
+  @include typography.font-size(vars.$font-size-alpha);
+}
+
+h2 {
+  @include typography.font-size(vars.$font-size-beta);
+}
+
+h3 {
+  @include typography.font-size(vars.$font-size-gamma);
+}
+
+h4 {
+  @include typography.font-size(vars.$font-size-delta);
+}
+
+h5 {
+  @include typography.font-size(vars.$font-size-epsilon);
+}
+
+h6 {
+  @include typography.font-size(vars.$font-size-zeta);
+}

@@ -4,3 +4,7 @@ node_modules
 npm-debug.log
 yarn.lock
 test/css/*
+
+# Hide compiled Assets
+_docs/dist
+_docs/src/templates/_includes/assets/*

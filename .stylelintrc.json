@@ -1,0 +1,6 @@
+{
+  "extends": [
+    "@supple-kit/stylelint-config-supple",
+    "stylelint-config-prettier"
+  ]
+}

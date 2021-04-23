@@ -1,0 +1,45 @@
+/*  =========================================================================
+    lithe.settings.vars
+    Lithe's theming layer
+/   ========================================================================= */
+
+/*  Supple-css overrides
+/   ========================================================================= */
+
+@use "settings/defaults" with (
+  $font-size: 16px,
+  $queries: (
+    palm: palm,
+    lap: lap,
+    desk: desk,
+    wall: wall,
+    until-desk: (
+      max: desk
+    )
+  )
+);
+
+@forward "settings/defaults";
+
+/*  Lithe specific styles
+/   ========================================================================= */
+
+$font-size-max: 20px !default;
+$font-size-alpha: defaults.$baseline * 4 !default;
+$font-size-beta: defaults.$baseline * 3 !default;
+$font-size-gamma: defaults.$baseline * 2.5 !default;
+$font-size-delta: defaults.$baseline * 2.5 !default;
+$font-size-epsilon: defaults.$baseline * 2.5 !default;
+$font-size-zeta: defaults.$baseline * 2.5 !default;
+$font-size-eta: 12px !default;
+
+/**
+ * Colors
+ */
+$color-light: #fcfcfc !default; // Baby powder
+$color-gray: #ececec !default;
+$color-dark-gray: #7d99b4 !default;
+$color-dark: #12355b !default; // Prussian blue
+$color-brand-primary: #ee4266 !default; // Paradise pink
+$color-brand-secondary: #161f2b !default; // Rich black
+$color-brand-tertiary: #3ddc97 !default; // Medium aquamarine

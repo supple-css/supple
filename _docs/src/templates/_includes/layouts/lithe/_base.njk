@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  {% include "partials/meta-info.njk" %}
+
+  <script>document.documentElement.classList.remove('no-js');</script>
+
+  {% include "partials/styles.njk" %}
+
+  {% block head %}{% endblock %}
+</head>
+<body>
+  <div class="o-frame">
+    <header class="o-frame__masthead  |  o-flow">
+      <a href="/" class="lithe-logo">
+        {% include "partials/logo.njk" %}
+      </a>
+      <div class="c-intro">
+        <p>Documentation for the Supple-CSS framework.</p>
+      </div>
+      {% set navAriaLabel = 'navigation' %}
+      {% set navPages = collections.all | eleventyNavigation %}
+      {% include "partials/navigation.njk" %}
+    </header>
+    <div class="o-frame__body  |  o-flow">
+      <main class="c-main  |  o-flow" id="main-content" tabindex="-1">
+        {% block content %}{% endblock content %}
+      </main>
+      {% block foot %}{% endblock %}
+      <footer class="c-mastfoot" role="contentinfo">
+        <p>Supple CSS is part of <a href="">Supple Kit</a>, a <a href="https://bram.is"><strong>bram.is</strong></a> project.</p>
+      </footer>
+    </div>
+  </div>
+  {% include "partials/scripts.njk" %}
+</body>
+</html>

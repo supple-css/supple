@@ -1,0 +1,7 @@
+_docs/dist
+node_modules
+*.md
+
+_docs/src/templates/_includes/assets
+_docs/src/assets/scss/highlight.scss
+_test/css/*
