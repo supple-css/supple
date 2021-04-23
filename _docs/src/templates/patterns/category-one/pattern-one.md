@@ -12,6 +12,7 @@ eleventyNavigation:
 Pattern one content
 
 ## Code Block
+
 ```html
 <html></html>
 ```
@@ -31,12 +32,13 @@ Pattern one content
 ```javascript
 import { method } from 'module';
 
-method (() => {
+method(() => {
   console.log();
 });
 ```
 
 ## HTML
+
 <div class="o-layout">
   <div class="o-layout__cell  u-colspan-3">Spans 3 of 12</div>
   <div class="o-layout__cell  u-colspan-6">Spans 6 of 12</div>
@@ -44,7 +46,9 @@ method (() => {
 </div>
 
 ## Shadow dom demo
+
 {% demo %}
+
   <div>
     <button aria-pressed="false">Toggle Me</button>
 
@@ -75,6 +79,6 @@ method (() => {
         e.target.setAttribute('aria-pressed', !pressed);
       });
     </script>
+
   </div>
 {% enddemo %}
-

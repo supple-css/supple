@@ -3,7 +3,7 @@ layout: layouts/lithe/default.njk
 tags:
 title: Supple CSS documentation
 metaTitle: Supple CSS, a reliable and testable Sass framework.
-metaDesc: "Supple CSS is a reliable and testable Sass framework, based on the ITCSS methodology and suited very well for component-based UI development."
+metaDesc: 'Supple CSS is a reliable and testable Sass framework, based on the ITCSS methodology and suited very well for component-based UI development.'
 permalink: index.html
 ---
 

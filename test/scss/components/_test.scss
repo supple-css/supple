@@ -11,17 +11,11 @@
 @use '../../../tools/typography';
 @use '../../../settings/defaults';
 
-
-
 /*  Variables
     ========================================================================= */
 
-
-
 /*  Functions/Mixins
     ========================================================================= */
-
-
 
 /*  Module
     ========================================================================= */
@@ -74,7 +68,6 @@
   }
 }
 
-
 .c-test__describe::before,
 .c-test__it::before {
   display: inline-block;
@@ -83,7 +76,6 @@
   text-transform: uppercase;
   color: #999999;
 }
-
 
 .c-test__run {
   // empty for reference

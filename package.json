@@ -29,6 +29,7 @@
   "scripts": {
     "test": "npm run lint && npm run build && npm run gzip",
     "lint": "stylelint \"**/*.scss\"",
+    "lint:fix": "prettier --write .",
     "gzip": "gzip-size test/css/index.css",
     "postcss": "postcss test/css/**/*.css --replace",
     "sass": "sass index.scss:test/css/index.css test/scss/test.scss:test/css/test.css --no-source-map",
@@ -70,6 +71,7 @@
     "nodemon": "^2.0.7",
     "postcss": "^8.2.9",
     "postcss-cli": "^8.3.1",
+    "prettier": "^2.2.1",
     "sass": "^1.32.8",
     "slugify": "^1.5.0",
     "strip-comments": "^2.0.1",

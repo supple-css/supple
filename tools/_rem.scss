@@ -12,8 +12,6 @@
 @use 'sass:meta';
 @use '../settings/defaults';
 
-
-
 /*  Module
     ========================================================================= */
 
@@ -22,13 +20,18 @@
  * Converts a single px value to a rem unit based on the current browser context
  */
 @function to-rem($value) {
-  @if meta.type-of($value) == string or math.is-unitless($value) == true or math.unit($value) != 'px' {
+  @if meta.type-of($value) ==
+    string or
+    math.is-unitless($value) ==
+    true or
+    math.unit($value) !=
+    'px'
+  {
     @return $value;
   } @else {
     @return ($value/defaults.$font-size * 1rem);
   }
 }
-
 
 /**
  * Rem

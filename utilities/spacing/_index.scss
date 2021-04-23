@@ -18,7 +18,6 @@
  */
 @forward './variables';
 
-
 /**
  * Use the settings & tools in this sheet
  */
@@ -29,14 +28,10 @@
 @use '../../tools/responsive';
 @use './tools';
 
-
-
 /*  Module
     ========================================================================= */
 
 @include tools.build();
-
-
 
 /*  Responsive
     ========================================================================= */
@@ -49,6 +44,8 @@
   }
 } @else {
   @include responsive.mq(variables.$in-query) {
-    @include tools.build('#{defaults.$responsive-modifier}#{variables.$in-query}');
+    @include tools.build(
+      '#{defaults.$responsive-modifier}#{variables.$in-query}'
+    );
   }
 }

@@ -13,15 +13,12 @@
  */
 @forward './variables';
 
-
 /**
  * Use the settings & tools in this sheet
  */
 @use './variables';
 @use '../../tools/space';
 @use '../../tools/rem';
-
-
 
 /*  Module
     ========================================================================= */
@@ -39,7 +36,6 @@
   margin-inline-start: auto; /* [1] */
 }
 
-
 /**
  * Modifier: no-padding
  */
@@ -47,8 +43,6 @@
   padding-inline-end: 0;
   padding-inline-start: 0;
 }
-
-
 
 /*  Common width modifiers, for use in browsers without
     custom-property support

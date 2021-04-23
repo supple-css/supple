@@ -11,8 +11,6 @@
 @use '../settings/defaults';
 @use './rem';
 
-
-
 /*  Functions
     ========================================================================= */
 
@@ -25,7 +23,6 @@
   }
   @return map.get(defaults.$space-factors, $name);
 }
-
 
 /**
  * Get `rem`mified space

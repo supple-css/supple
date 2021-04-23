@@ -9,8 +9,6 @@
 
 @use '../../settings/defaults';
 
-
-
 /*  Variables
     ========================================================================= */
 
@@ -20,14 +18,10 @@
  */
 $columns: defaults.$columns !default;
 
-
 /**
  * The `gap` map
  */
-$gaps: (
-  'base',
-) !default;
-
+$gaps: ('base') !default;
 
 /**
  * Define which namespaced queries you would like to generate

@@ -9,8 +9,6 @@
 
 @use '../../settings/defaults';
 
-
-
 /*  Variables
     ========================================================================= */
 
@@ -20,20 +18,15 @@
  */
 $columns: defaults.$columns !default;
 
-
 /**
  * The `gap` map
  */
-$gaps: (
-  'base',
-) !default;
-
+$gaps: ('base') !default;
 
 /**
  * Flow inline-size
  */
 $flow-min-inline-size: 200px !default;
-
 
 /**
  * Define which namespaced queries you would like to generate for `row`.

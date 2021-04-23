@@ -9,8 +9,6 @@
 
 @use '../../settings/defaults';
 
-
-
 /*  Variables
     ========================================================================= */
 
@@ -18,7 +16,6 @@
  * Columns, makes it easy to create several proportional columns
  */
 $columns: defaults.$columns !default;
-
 
 /**
  * Define which namespaced queries you would like to generate for each

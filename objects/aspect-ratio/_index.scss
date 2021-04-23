@@ -15,15 +15,12 @@
  */
 @forward './variables';
 
-
 /**
  * Use the settings & tools in this sheet
  */
 @use 'sass:meta';
 @use './variables';
 @use '../../settings/defaults';
-
-
 
 /*  Internal variables
     ========================================================================= */
@@ -32,8 +29,6 @@ $selector: '> *';
 @if (defaults.$css-modules) {
   $selector: ':global(#{$selector})';
 }
-
-
 
 /*  Module
     ========================================================================= */
@@ -55,8 +50,6 @@ $selector: '> *';
     block-size: 100%;
   }
 }
-
-
 
 /*  Common ratio modifiers, for use in browsers without
     custom-property support

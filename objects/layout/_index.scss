@@ -13,7 +13,6 @@
  */
 @forward './variables';
 
-
 /**
  * Use the settings & tools in this sheet
  */
@@ -22,8 +21,6 @@
 @use '../../tools/space';
 @use '../../tools/responsive';
 
-
-
 /*  Internal variables
     ========================================================================= */
 
@@ -31,8 +28,6 @@ $selector: '> *';
 @if (defaults.$css-modules) {
   $selector: ':global(#{$selector})';
 }
-
-
 
 /*  Module code
     ========================================================================= */
@@ -79,13 +74,17 @@ $selector: '> *';
     --offset: 0;
     --layout-inline-gap-internal: var(--layout-inline-gap); /* [4] */
     --layout-block-gap-internal: var(--layout-block-gap); /* [4] */
-    flex-basis: calc((100% / var(--columns) * var(--colspan)) - var(--layout-inline-gap-internal)); /* [1] */
+    flex-basis: calc(
+      (100% / var(--columns) * var(--colspan)) -
+        var(--layout-inline-gap-internal)
+    ); /* [1] */
     min-inline-size: 0; /* [2] */
     margin-block-start: var(--layout-block-gap-internal);
-    margin-inline-start: calc(100% / var(--columns) * var(--offset) + var(--layout-inline-gap-internal)); /* [3] */
+    margin-inline-start: calc(
+      100% / var(--columns) * var(--offset) + var(--layout-inline-gap-internal)
+    ); /* [3] */
   }
 }
-
 
 /**
  * Modifier: inline-center
@@ -95,7 +94,6 @@ $selector: '> *';
   justify-content: center;
 }
 
-
 /**
  * Modifier: align-inline-end
  * align all layout cells to the end of the inline axis
@@ -103,7 +101,6 @@ $selector: '> *';
 .o-layout--align-inline-end {
   justify-content: flex-end;
 }
-
 
 /**
  * Modifier: align-block-center
@@ -113,7 +110,6 @@ $selector: '> *';
   align-items: center;
 }
 
-
 /**
  * Modifier: align-block-end
  * end-align layout cells on the block axis
@@ -121,7 +117,6 @@ $selector: '> *';
 .o-layout--align-block-end {
   align-items: flex-end;
 }
-
 
 /**
  * Modifier: stretch
@@ -131,7 +126,6 @@ $selector: '> *';
   align-items: stretch;
 }
 
-
 /**
  * Modifier: reverse
  * reverse all cells
@@ -139,7 +133,6 @@ $selector: '> *';
 .o-layout--reverse {
   flex-direction: row-reverse;
 }
-
 
 /**
  * Modifier: fill
@@ -161,7 +154,6 @@ $selector: '> *';
   }
 }
 
-
 /**
  * Modifier: gap-X
  */
@@ -170,7 +162,6 @@ $selector: '> *';
     --layout-gap: #{space.get($gap)};
   }
 }
-
 
 /*  Elements
     ========================================================================= */
@@ -184,7 +175,6 @@ $selector: '> *';
     flex-basis: auto;
   }
 }
-
 
 /**
  * Element: fill
@@ -200,7 +190,6 @@ $selector: '> *';
   }
 }
 
-
 /**
  * Element: align-inline-center
  * Center one flex item on the inline axis
@@ -209,7 +198,6 @@ $selector: '> *';
   margin-inline-start: auto;
   margin-inline-end: auto;
 }
-
 
 /**
  * Element: cell
@@ -230,7 +218,6 @@ $selector: '> *';
     }
   }
 }
-
 
 /*  Overrides
     For when layout is directly used in other modules

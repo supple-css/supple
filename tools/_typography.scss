@@ -12,8 +12,6 @@
 @use '../settings/defaults';
 @use 'rem';
 
-
-
 /*  Font size
     Generates a rem font-size and a baseline-compatible unitless line-height
     from a pixel font-size value. Basic usage is simply:
@@ -37,7 +35,12 @@
       @include typography.font-size(24px, $modifier: -1);
     ========================================================================= */
 
-@mixin font-size($font-size, $line-height: auto, $modifier: 0, $important: false) {
+@mixin font-size(
+  $font-size,
+  $line-height: auto,
+  $modifier: 0,
+  $important: false
+) {
   @if (meta.type-of($font-size) == number) {
     @if (math.unit($font-size) != 'px') {
       @error '`#{$font-size}` needs to be a pixel value.';
@@ -64,7 +67,14 @@
     $line-height: $lines * defaults.$baseline;
     line-height: ($line-height / $font-size) $important;
   } @else {
-    @if (meta.type-of($line-height) == number or $line-height == 'inherit' or $line-height == 'normal') {
+    @if (
+      meta.type-of($line-height) ==
+        number or
+        $line-height ==
+        'inherit' or
+        $line-height ==
+        'normal'
+    ) {
       line-height: $line-height $important;
     } @else if ($line-height != 'none' and $line-height != false) {
       @error 'Oh noes! `#{$line-height}` is not a valid value for `$line-height`.';

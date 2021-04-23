@@ -14,7 +14,6 @@
  */
 @forward './variables';
 
-
 /**
  * Use the settings & tools in this sheet
  */
@@ -22,17 +21,11 @@
 @use '../../settings/defaults';
 @use '../../tools/space';
 
-
-
 /*  Variables
     ========================================================================= */
 
-
-
 /*  Functions/Mixins
     ========================================================================= */
-
-
 
 /*  Module
     ========================================================================= */
@@ -50,7 +43,6 @@
     margin-block-start: var(--flow-gap);
   }
 }
-
 
 @each $gap in variables.$gaps {
   .o-flow--#{$gap} {

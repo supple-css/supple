@@ -9,8 +9,6 @@
 
 @use '../../settings/defaults';
 
-
-
 /*  Variables
     ========================================================================= */
 
@@ -36,7 +34,6 @@ $properties: (
   'margin-block-end': 'margin-block-end',
 ) !default;
 
-
 /**
  * And which sizes you want to generate?
  *
@@ -47,10 +44,7 @@ $properties: (
  *
  * By default it's only `base` we generate
  */
-$sizes: (
-  'base',
-) !default;
-
+$sizes: ('base') !default;
 
 /**
  * Define which namespaced queries you would like to generate for
