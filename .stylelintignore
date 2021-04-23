@@ -1,7 +1,7 @@
-_docs/dist
+dist
 node_modules
 *.md
 
-_docs/src/templates/_includes/assets
-_docs/src/assets/scss/highlight.scss
+_docs/templates/_includes/assets
+_docs/assets/scss/highlight.scss
 _test/css/*

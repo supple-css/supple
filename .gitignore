@@ -6,5 +6,5 @@ yarn.lock
 test/css/*
 
 # Hide compiled Assets
-_docs/dist
-_docs/src/templates/_includes/assets/*
+dist
+_docs/templates/_includes/assets/*
