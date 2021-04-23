@@ -6,7 +6,7 @@ module.exports = function htmlMinTransform(value, outputPath) {
       useShortDoctype: true,
       removeComments: true,
       collapseWhitespace: true,
-      minifyCSS: false
+      minifyCSS: false,
     });
     return minified;
   }
