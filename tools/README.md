@@ -1,21 +1,24 @@
-# Supple CSS | tools
+---
+layout: layouts/lithe/pattern.njk
+tags:
+title: 'Tools'
+metaDesc: Supple CSS has a wide range of functions and mixins to help you build fast en robust web-interfaces.
+permalink: tools/tools/index.html
+eleventyNavigation:
+  key: Functions & mixins
+  parent: Tools
+---
 
-Supple's functions and mixins.
-
-Read more about [Supple CSS](https://github.com/supple-css/supple).
+Supple CSS has a wide range of functions and mixins to help you build fast en robust web-interfaces.
 
 ## Table of contents
 
 - [Use](#use)
-- Modules
-  - [Space](#space)
-  - [Rem](#rem)
-  - [Accessibility](#accessibility)
-  - [Typography](#typography)
-  - [Responsive](#responsive)
-- [Installation](#installation)
-- [Testing](#testing)
-- [Browser support](#browser-support)
+- [Space](#space)
+- [Rem](#rem)
+- [Accessibility](#accessibility)
+- [Typography](#typography)
+- [Responsive](#responsive)
 
 ## Use
 
@@ -303,13 +306,3 @@ $YOURMODULE-in-query: (lap, desk);
   }
 }
 ```
-
-## Installation
-
-Make sure you've installed/downloaded the Supple CSS library: [Supple CSS installation](../../#installation)
-
-## Browser support
-
-- Chromium-based browsers (Chrome, Edge, Brave, Opera)
-- WebKit-based browsers (Safari, iOS Safari)
-- Firefox (Gecko)

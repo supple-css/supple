@@ -15,9 +15,6 @@ This file contains the Supple default variables, without this file the framework
 
 - [Use](#use)
 - [Configurable SCSS variables](#configurable-scss-variables)
-- [Installation](#installation)
-- [Testing](#testing)
-- [Browser support](#browser-support)
 
 ## Use
 
@@ -251,13 +248,3 @@ $css-modules: true;
 ```scss
 $css-modules: false !default;
 ```
-
-## Installation
-
-Make sure you've installed/downloaded the Supple CSS library: [Supple CSS installation](../../#installation)
-
-## Browser support
-
-- Chromium-based browsers (Chrome, Edge, Brave, Opera)
-- WebKit-based browsers (Safari, iOS Safari)
-- Firefox (Gecko)

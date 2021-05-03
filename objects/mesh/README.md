@@ -19,9 +19,6 @@ If you want to arrange items over 1 dimension (horizontal) I recommend using [ob
 - [Use](#use)
 - [Available classes](#available-classes)
 - [Configurable variables](#configurable-variables)
-- [Installation](#installation)
-- [Testing](#testing)
-- [Browser support](#browser-support)
 
 ## Features
 
@@ -196,17 +193,3 @@ or
 // in your manifest file, eg. `styles.scss`
 @use 'node_modules/@supple-kit/supple-css/objects/mesh';
 ```
-
-## Installation
-
-Make sure you've installed/downloaded the Supple CSS library: [Supple CSS installation](../../#installation)
-
-## Testing
-
-Basic visual tests are in [test.html](https://supple-kit.github.io/supple-css/objects/mesh/test.html).
-
-## Browser support
-
-- Chromium-based browsers (Chrome, Edge, Brave, Opera)
-- WebKit-based browsers (Safari, iOS Safari)
-- Firefox (Gecko)

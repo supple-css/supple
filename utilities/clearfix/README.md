@@ -15,9 +15,6 @@ Clears floats.
 
 - [Use](#use)
 - [Available classes](#available-classes)
-- [Installation](#installation)
-- [Testing](#testing)
-- [Browser support](#browser-support)
 
 ## Use
 
@@ -38,17 +35,3 @@ Clears floats.
 **On the `.u-clearfix` block**
 
 - `.u-clearfix`: core visually hidden block
-
-## Installation
-
-Make sure you've installed/downloaded the Supple CSS library: [Supple CSS installation](../../#installation)
-
-## Testing
-
-Basic visual tests are in [test.html](https://supple-kit.github.io/supple-css/utilities/clearfix/test.html).
-
-## Browser support
-
-- Chromium-based browsers (Chrome, Edge, Brave, Opera)
-- WebKit-based browsers (Safari, iOS Safari)
-- Firefox (Gecko)

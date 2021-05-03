@@ -17,8 +17,6 @@ Utility which provides a columns custom property for use in objects or component
 - [Use](#use)
 - [Available classes](#available-classes)
 - [Configurable variables](#configurable-variables)
-- [Installation](#installation)
-- [Browser support](#browser-support)
 
 ## Features
 
@@ -69,13 +67,3 @@ or
 // in your manifest file, eg. `styles.scss`
 @use 'node_modules/@supple-kit/supple-css/utilities/columns';
 ```
-
-## Installation
-
-Make sure you've installed/downloaded the Supple CSS library: [Supple CSS installation](../../#installation)
-
-## Browser support
-
-- Chromium-based browsers (Chrome, Edge, Brave, Opera)
-- WebKit-based browsers (Safari, iOS Safari)
-- Firefox (Gecko)

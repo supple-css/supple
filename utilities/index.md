@@ -6,7 +6,7 @@ metaDesc: Utilities
 permalink: utilities/index.html
 eleventyNavigation:
   key: Utilities
-  order: 3
+  order: 7
 ---
 
 Utilities content

@@ -16,18 +16,15 @@ Hides an element completely from flow and screenreaders.
 - [Use](#use)
 - [Available classes](#available-classes)
 - [Configurable variables](#configurable-variables)
-- [Installation](#installation)
-- [Testing](#testing)
-- [Browser support](#browser-support)
 
 ## Use
 
 ```html
 <button>
   This button has text that is
-  <span class="u-hidden"
-    >totally hidden from flow, view and assistive technology</span
-  >
+  <span class="u-hidden">
+    totally hidden from flow, view and assistive technology
+  </span>
 </button>
 ```
 
@@ -38,9 +35,9 @@ When you set media queries in `$in-query` you can use them like this:
 ```html
 <button>
   This button has text that is
-  <span class="u-hidden@lap"
-    >totally hidden from flow, view and assistive technology</span
-  >
+  <span class="u-hidden@lap">
+    totally hidden from flow, view and assistive technology
+  </span>
 </button>
 ```
 
@@ -79,17 +76,3 @@ or
 // in your manifest file, eg. `styles.scss`
 @use 'node_modules/@supple-kit/supple-css/utilities/hidden';
 ```
-
-## Installation
-
-Make sure you've installed/downloaded the Supple CSS library: [Supple CSS installation](../../#installation)
-
-## Testing
-
-Basic visual tests are in [test.html](https://supple-kit.github.io/supple-css/utilities/hidden/test.html).
-
-## Browser support
-
-- Chromium-based browsers (Chrome, Edge, Brave, Opera)
-- WebKit-based browsers (Safari, iOS Safari)
-- Firefox (Gecko)
