@@ -14,15 +14,20 @@ This file contains the Supple default variables, without this file the framework
 ## Table of contents
 
 - [Use](#use)
-- [Configurable SCSS variables](#configurable-scss-variables)
+- [Baseline](#baseline)
+- [Space-factors](#space-factors)
+- [Typography](#typography)
+- [Grid](#grid)
+- [Responsive](#responsive)
+- [Namespace](#namespace)
+- [Technology](#technology)
 
 ## Use
 
-You can override the default variables like this:
+You can override and forward the default variables in your `_vars.scss`:
 
 ```scss
-// in you own settings file eg. `_vars.scss` or from you manifest file eg. `styles.scss`
-@use 'node_modules/@supple-kit/supple-css/settings/defaults' with (
+@use '@supple-kit/supple-css/settings/defaults' with (
   $columns: 10,
   $baseline: 6px,
   $space-factors: (
@@ -30,87 +35,79 @@ You can override the default variables like this:
     'tiny': 1,
   ),
 );
+
+@forward '@supple-kit/supple-css/settings/defaults';
+
+// Your own SCSS variables
+$theme-color: #bada55;
 ```
 
-And when you need the variables in your own module you can use them like this:
+By using `@forward` you can import and use Supple CSS’s variables just by including your own `_vars.scss` inside your other modules:
 
 ```scss
-// Use defaults and make variables available through `defaults.` prefix.
-@use 'node_modules/@supple-kit/supple-css/settings/defaults';
+@use 'settings/vars';
 
 .your-module {
-  --columns: #{defaults.$columns};
-}
-
-// or in combination with tools
-
-// Use defaults and make variables available through `defaults.` prefix.
-@use 'node_modules/@supple-kit/supple-css/settings/defaults';
-// Use tools and make tools available through the `tools.` prefix.
-@use 'node_modules/@supple-kit/supple-css/tools/rem';
-
-.your-module__element {
-  @include rem.convert(margin-inline-start, defaults.$baseline);
+  --columns: #{vars.$columns}; // variable from Supple CSS defaults
+  color: vars.$theme-color; // your own variable
 }
 ```
 
-## Configurable SCSS variables
+This way you create a single source of truth which you can re-use throughout your whole codebase.
 
-### `$baseline`
+## `$baseline`
 
-By default supple creates an 8 point baseline to create vertical (and horizontal) rhythm. Everything is spaced by this baseline: margins, paddings and gaps in `objects.mesh` and `objects.layout`. More information:
+By default supple creates an 8 point baseline to create vertical (and horizontal) rhythm. Everything is spaced by this baseline: line-height, margin, padding and gap in `objects.mesh` and `objects.layout`.
+
+More information:
 
 - [https://builttoadapt.io/intro-to-the-8-point-grid-system-d2573cde8632](https://builttoadapt.io/intro-to-the-8-point-grid-system-d2573cde8632)
 - [https://medium.freecodecamp.org/8-point-grid-typography-on-the-web-be5dc97db6bc](https://medium.freecodecamp.org/8-point-grid-typography-on-the-web-be5dc97db6bc)
 
-**example:**
-
-```scss
-$baseline: 6px; // Creates 6px baseline
-```
-
-**defaults to:**
+**Defaults to:**
 
 ```scss
 $baseline: 8px !default;
 ```
 
-### `$space-factors`
-
-The following map keys multiply the `$baseline` to consistent and transparent spacing rules.
-
-**example:**
+**Example:**
 
 ```scss
-$space-factors: (
-  'base': 4,
-  // 4*8px = 32px
-  'tiny': 2,
-  // 2*8px = 16px
-  'small': 3,
-  // 3*8px = 24px
-  'large': 6,
-  // 6*8px = 48px
-  'huge': 12,
-  // 12*8px = 96px
+@use '@supple-kit/supple-css/settings/defaults' with (
+  $baseline: 6px
 );
 ```
 
-**defaults to:**
+## `$space-factors`
+
+The following map multiply the `$baseline` to consistent and transparent spacing names.
+
+**Defaults to:**
 
 ```scss
 $space-factors: (
   'tiny': 1,
-  // 1*8px = 8px
   'small': 2,
-  // 2*8px = 16px
   'base': 3,
-  // 3*8px = 24px
   'large': 6,
-  // 6*8px = 48px
   'huge': 12,
-  // 12*8px = 96px
 ) !default;
+```
+
+**Example:**
+
+You can choose every name and multiplication factor that you like, but the **base** entry is mandatory.
+
+```scss
+@use '@supple-kit/supple-css/settings/defaults' with (
+  $space-factors: (
+    'base': 4,
+    'pico': 2,
+    'nano': 3,
+    'kilo': 6,
+    'mega': 12,
+  )
+);
 ```
 
 These multiplication factors are converted to a `rem` value and available through our `space.get()` function:
@@ -123,108 +120,129 @@ These multiplication factors are converted to a `rem` value and available throug
 }
 ```
 
-This map is used throughout supple to ensure a consistent vertical rhythm. You can also use `space.get()` inside your own modules.
-
-**Note** `$space-factors` needs to contain atleast one entry named 'base' since supple-css internally relies on this.
-
-### Typography
+## Typography
 
 You can set the base font-size and line-height of the application:
 
-**example:**
-
-```scss
-$font-size: 20px;
-$line-height: 4 * $baseline; // 4 * 8px = 32px
-```
-
-**defaults to:**
+**Defaults to:**
 
 ```scss
 $font-size: 16px !default;
 $line-height: map.get($space-factors, 'base') * $baseline !default; // 3 * 8px = 24px
 ```
 
-### Grid
+**Example:**
+
+```scss
+@use '@supple-kit/supple-css/settings/defaults' with (
+  $font-size: 20px,
+  $line-height: 32px
+);
+```
+
+## Grid
 
 You can set a global `$columns` variable which is used in `objects.layout`, `objects.mesh`, `utilities.colspan` & `utilities.colstart`.
 
-**example:**
-
-```scss
-$columns: 24;
-```
-
-**defaults to:**
+**Defaults to:**
 
 ```scss
 $columns: 12;
 ```
 
-**Note** this is only a global columns setting shared across modules, you can override module specific columns in their own `_variable.scss` file.
-
-### Responsive
-
-Working with breakpoints is pretty straightforward. You can add as many breakpoints as you want. You can show the breakpoints for debug purposes. And even disable responsive mode altogether.
-
-**example:**
+**Example:**
 
 ```scss
-// Breakpoint list
-// Name your breakpoints in a way that creates a ubiquitous language across team members.
-// It will improve communication between stakeholders, designers, developers, and testers.
+@use '@supple-kit/supple-css/settings/defaults' with (
+  $columns: 24
+);
+```
+
+**Note** this is only a global columns setting shared across modules, you can override module specific columns in their own `_variable.scss` file.
+
+## Responsive
+
+Working with breakpoints is pretty straightforward. You can add as many breakpoints as you want.
+
+**Defaults to:**
+
+```scss
 $breakpoints: (
   palm: 320px,
   lap: 640px,
   desk: 960px,
   wall: 1280px,
-);
+) !default;
 
-// Query list, which is used by the `responsive.mq()` mixin.
-// Name your queries in a way that creates a ubiquitous language across team members.
-// You can reference `$breakpoints` by name or you can enter a `px` or `em` value
-// You can create complex media queries like this:
 $queries: (
-  // min-width
   palm: palm,
   lap: lap,
   desk: desk,
   wall: wall,
-  // max-width
-  until-desk:
-    (
-      max: desk,
+) !default;
+```
+
+As you can see we have a `$breakpoints` list which only can contain `px` or `em` values. These breakpoints are then mapped by name to sensible media query names in `$queries`.
+
+The names you define in `$queries` can be used in the `responsive.mq()` mixin like:
+
+```scss
+@use '@supple-kit/supple-css/tools/responsive';
+
+.your-selector {
+  color: #ff0000;
+
+  @include responsive.mq('desk') {
+    color: #00ff00;
+  }
+}
+```
+
+You can go entirely crazy with your breakpoints and queries:
+
+```scss
+@use '@supple-kit/supple-css/settings/defaults' with (
+  $breakpoints: (
+    baby-bear: 320px,
+    mama-bear: 640px,
+    papa-bear: 960px,
+    grandma-bear: 1280px,
+  ),
+
+  $queries: (
+    // min-width
+    baby-bear: baby-bear,
+    mama-bear: mama-bear,
+    papa-bear: papa-bear,
+    grandma-bear: grandma-bear,
+    // max-width
+    until-papa-bear: (
+      max: papa-bear,
     ),
-  // min-width & max-width
-  lap-until-desk:
-    (
-      min: lap,
-      max: desk,
+    // min-width & max-width
+    mama-bear-until-papa-bear: (
+      min: mama-bear,
+      max: papa-bear,
     ),
-  // min-width & max-width with generic px value
-  lap-until-generic:
-    (
-      min-width: lap,
+    // min-width & max-width with generic px value
+    mama-bear-until-generic: (
+      min-width: mama-bear,
       max-width: 1024px,
     ),
-  // You can also apply height queries
-  height-large-until-huge:
-    (
+    // You can also apply height queries
+    height-large-until-huge: (
       min-height: 640px,
       max-height: 1024px,
     )
+  )
 );
 ```
 
-### Namespace
+Name your breakpoints and queries in a way that creates a ubiquitous language across team members. It will improve communication between stakeholders, designers, developers, and testers.
 
-By default all responsive classes are prefixed with `@`. This way it is clear that, for example, `u-colspan-8@from-palm` is a responsive modifier. You can however change the `@` to anything you like:
+## Namespace
 
-**Example:**
-
-```scss
-$responsive-modifier: '--';
-```
+By default all responsive classes in Supple CSS are prefixed with `@`. This way it is clear that, for example, `u-colspan-8@palm` is a responsive modifier.
 
 **Defaults:**
 
@@ -232,19 +250,25 @@ $responsive-modifier: '--';
 $responsive-modifier: unquote('\\@') !default;
 ```
 
-### Technology
-
-Sometimes 3rd party technologies don't play nice with some supple modules.
-The settings you find in this category enables us to use supple with technologies like css-modules.
-
 **Example:**
 
 ```scss
-$css-modules: true;
+$responsive-modifier: '--';
 ```
+
+## Technology
+
+Sometimes 3rd party technologies don't play nice with some supple modules.
+The settings you find in this category enables us to use supple with technologies like css-modules.
 
 **Defaults:**
 
 ```scss
 $css-modules: false !default;
+```
+
+**Example:**
+
+```scss
+$css-modules: true;
 ```
