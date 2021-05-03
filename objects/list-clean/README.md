@@ -20,9 +20,33 @@ Strip appearance from lists by removing their bullets and indents.
 
 ```html
 <ul class="o-list-clean">
-  <li></li>
+  <li>List item 1</li>
+  <li>List item 2</li>
 </ul>
 ```
+
+<div class="o-fixture">
+  <ul class="o-list-clean">
+    <li>List item 1</li>
+    <li>List item 2</li>
+  </ul>
+</div>
+
+And on a single `dd` child
+
+```html
+<dl>
+  <dt>List item 1</dt>
+  <dd class="o-list-clean__item">List item 2</dd>
+</dl>
+```
+
+<div class="o-fixture">
+  <dl>
+    <dt>Term</dt>
+    <dd class="o-list-clean__item">Definition</dd>
+  </dl>
+</div>
 
 ## Available classes
 
