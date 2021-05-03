@@ -43,7 +43,8 @@ And then include the module in your `styles.scss` manifest file:
 @use 'node_modules/@supple-kit/supple-css/objects/aspect-ratio';
 ```
 
-By default the aspect ratio container has a ratio of 1:1, a perfect square.
+Then you can apply the classes to the HTML.
+By default the aspect ratio container has a ratio of `1:1`, a perfect square.
 
 ```html
 <div class="o-aspect-ratio">
