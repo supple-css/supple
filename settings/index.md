@@ -6,7 +6,7 @@ metaDesc: Settings
 permalink: settings/index.html
 eleventyNavigation:
   key: Settings
-  order: 3
+  order: 10
 ---
 
 Settings content

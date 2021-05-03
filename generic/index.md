@@ -6,7 +6,7 @@ metaDesc: Generic
 permalink: generic/index.html
 eleventyNavigation:
   key: Generic
-  order: 5
+  order: 12
 ---
 
 Generic content

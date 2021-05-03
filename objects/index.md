@@ -6,7 +6,7 @@ metaDesc: Objects - metaDesc
 permalink: objects/index.html
 eleventyNavigation:
   key: Objects
-  order: 6
+  order: 13
 ---
 
 Objects content
