@@ -96,8 +96,8 @@
   margin-block-start: space.get('small');
   padding-inline-start: space.get('small');
   padding-inline-end: space.get('small');
-  @include typography.font-size(vars.$font-size);
-  text-transform: uppercase;
+  @include typography.font-size(vars.$font-size-zeta);
+  color: var(--color-brand-tertiary);
 }
 
 .c-nav__item {
