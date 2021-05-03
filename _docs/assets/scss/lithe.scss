@@ -24,6 +24,7 @@
 @use "lithe/elements/toplevel";
 @use "lithe/elements/typography";
 @use "lithe/elements/links";
+@use "lithe/elements/code";
 
 /*  Objects
 /   ========================================================================= */
@@ -31,6 +32,9 @@
 @use "objects/layout";
 @use "objects/flow";
 @use "objects/list-clean";
+@use "objects/aspect-ratio";
+@use "objects/mesh";
+@use "objects/retain";
 @use "lithe/objects/frame";
 @use "lithe/objects/fixture";
 

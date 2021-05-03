@@ -26,15 +26,36 @@ For use with multi-media embeds such as videos, images or slideshows, that need 
 
 ## Use
 
-By default the aspect ratio container has a ratio of 1:1, a perfect square.
+You can overwrite the SCSS variables the following way in your `_vars.scss`:
 
-**Note** `.o-aspect-ratio` only accepts `.o-aspect-ratio__item` as direct descendant.
+```scss
+@use '@supple-kit/supple-css/objects/aspect-ratio/variables' with (
+  $ratios: (
+    (4:3),
+    (16:9),
+  ),
+);
+```
+
+And then include the module in your `styles.scss` manifest file:
+
+```scss
+@use 'node_modules/@supple-kit/supple-css/objects/aspect-ratio';
+```
+
+By default the aspect ratio container has a ratio of 1:1, a perfect square.
 
 ```html
 <div class="o-aspect-ratio">
-  <iframe src=""></iframe>
+  <img src="//via.placeholder.com/450" alt="" loading="lazy" />
 </div>
 ```
+
+<div class="o-fixture">
+  <div class="o-aspect-ratio">
+    <img src="//via.placeholder.com/450" alt="" loading="lazy" />
+  </div>
+</div>
 
 ### Modifiers on `.o-aspect-ratio`
 
@@ -42,19 +63,65 @@ By default the aspect ratio container has a ratio of 1:1, a perfect square.
 <div
   class="o-aspect-ratio [o-aspect-ratio--4by3  |  o-aspect-ratio--16by9  |  o-aspect-ratio--2by1]"
 >
-  <iframe src=""></iframe>
+  <img src="" alt="" />
 </div>
 ```
+
+<figure class="o-fixture  |  o-flow">
+  <div class="o-aspect-ratio  o-aspect-ratio--4by3">
+    <img src="//via.placeholder.com/400x300" alt="" loading="lazy" />
+  </div>
+  <figcaption>with <code>o-aspect-ratio--4by3</code></figcaption>
+</figure>
+
+<figure class="o-fixture  |  o-flow">
+  <div class="o-aspect-ratio  o-aspect-ratio--16by9">
+    <img src="//via.placeholder.com/1600x900" alt="" loading="lazy" />
+  </div>
+  <figcaption>with <code>o-aspect-ratio--16by9</code></figcaption>
+</figure>
+
+<figure class="o-fixture  |  o-flow">
+  <div class="o-aspect-ratio  o-aspect-ratio--2by1">
+    <img src="//via.placeholder.com/2000x1000" alt="" loading="lazy" />
+  </div>
+  <figcaption>with <code>o-aspect-ratio--2by1</code></figcaption>
+</figure>
 
 ### Custom properties
 
 ```html
-<div class="o-aspect-ratio" style="--aspect-ratio: (560/315);">
+<div class="o-aspect-ratio" style="--ratio: (560/315);">
   <img src="" />
 </div>
 ```
 
-**Note** Of course this specific use of custom properties(through inline styles) is pure for example purposes. It is advised to overwrite the custom properties in your own components instead of inline styles.
+<figure class="o-fixture  |  o-flow">
+  <div class="o-aspect-ratio" style="--ratio: (560/315);">
+    <img src="//via.placeholder.com/560x315" alt="" loading="lazy" />
+  </div>
+  <figcaption>with <code>style="--ratio: (560/315);"</code></figcaption>
+</figure>
+
+**Note** Of course this specific use of custom properties(through inline styles) is pure for example purposes. It is advised to overwrite the custom properties in your own components instead:
+
+```scss
+.c-card {
+}
+.c-card__wrap-image {
+  --ratio: (560/315);
+}
+```
+
+HTML would look like this:
+
+```html
+<div class="c-card">
+  <div class="c-card__wrap-image  |  o-aspect-ratio">
+    <img src="//via.placeholder.com/560x315" alt="" />
+  </div>
+</div>
+```
 
 ## Available classes
 
@@ -73,35 +140,8 @@ There are multiple ways to configure the aspect-ratio object. The Custom propert
 
 **On the `.o-aspect-ratio` block**
 
-- `--ratio`: The aspect ratio you want to have, defaults to `(1:1)`
+- `--ratio`: The aspect ratio you want to have eg `(530/315)`, defaults to `(1/1)`
 
 ### SCSS variables
 
 - `$ratios`: a list of ratios where `.o-aspect-ratio--XbyX` is generated for, defaults to: `((2:1), (4:3), (16:9))`
-
-You can overwrite the SCSS variables the following ways:
-
-```scss
-// in your manifest file, eg. `styles.scss`
-@use 'node_modules/@supple-kit/supple-css/objects/aspect-ratio' with (
-  $ratios: (
-    (4:3),
-    (16:9),
-  ),
-);
-```
-
-or
-
-```scss
-// in your own variable file, eg. `_vars.scss`
-@use 'node_modules/@supple-kit/supple-css/objects/aspect-ratio/variables' with (
-  $ratios: (
-    (4:3),
-    (16:9),
-  ),
-);
-
-// in your manifest file, eg. `styles.scss`
-@use 'node_modules/@supple-kit/supple-css/objects/aspect-ratio';
-```

@@ -1,5 +1,5 @@
 /*  =========================================================================
-    lithe.objects.fixture
+    lithe.elements.code
 /   ========================================================================= */
 
 /*  Use/Forward rules
@@ -7,9 +7,9 @@
     These can include variables, mixins & other includes.
 /   ========================================================================= */
 
-@use "../settings/vars";
-@use "tools/space";
+@use '../settings/vars';
 @use 'tools/typography';
+@use 'tools/space';
 
 /*  Variables
 /   ========================================================================= */
@@ -20,28 +20,17 @@
 /*  Module
 /   ========================================================================= */
 
-.o-fixture,
-.o-fixture__box {
+:not(pre) > code {
+  display: inline-block;
+  vertical-align: middle;
+  padding-inline-start: space.get('tiny') / 2;
+  padding-inline-end: space.get('tiny') / 2;
   border-radius: space.get('tiny');
-}
-
-.o-fixture {
-  padding: space.get('small');
-  padding-inline-start: space.get('base');
-  padding-inline-end: space.get('base');
-  background-color: var(--color-fixture-background);
-
-  --flow-gap: #{space.get('small')};
-}
-
-.o-fixture__box {
-  padding-block-start: space.get('tiny');
-  padding-block-end: space.get('tiny');
-  padding-inline-start: space.get('small');
-  padding-inline-end: space.get('small');
   @include typography.font-size(vars.$font-size-eta);
-  text-align: center;
-  text-transform: uppercase;
-  color: var(--color-light);
-  background-color: var(--color-brand-primary);
+  background-color: var(--color-syn-high-code-bg);
+}
+
+.o-fixture code {
+  background-color: var(--color-syn-high-code-fixture-bg);
+  color: var(--color-syn-high-code-fixture-text);
 }

@@ -34,6 +34,9 @@
   --color-syn-high-dark-gray: #{vars.$color-dark-gray};
   --color-syn-high-primary: #{vars.$color-brand-primary};
   --color-syn-high-tertiary: #{vars.$color-brand-tertiary};
+  --color-syn-high-code-bg: var(--color-gray);
+  --color-syn-high-code-fixture-bg: #{vars.$color-dark-gray};
+  --color-syn-high-code-fixture-text: var(--color-light);
 
   @include tools.dark-mode() {
     --color-main-background: var(--color-brand-secondary);
