@@ -23,11 +23,12 @@
 :not(pre) > code {
   display: inline-block;
   vertical-align: middle;
-  padding-inline-start: space.get('tiny') / 2;
-  padding-inline-end: space.get('tiny') / 2;
+  padding-inline-start: 0.5em;
+  padding-inline-end: 0.5em;
   border-radius: space.get('tiny');
   @include typography.font-size(vars.$font-size-eta);
   background-color: var(--color-syn-high-code-bg);
+  color: var(--color-syn-high-code-text);
 }
 
 .o-fixture code {
