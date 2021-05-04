@@ -55,7 +55,7 @@ By using `@forward` you can import and use Supple CSS’s variables just by incl
 
 This way you create a single source of truth which you can re-use throughout your whole codebase.
 
-## `$baseline`
+## Baseline
 
 By default supple creates an 8 point baseline to create vertical (and horizontal) rhythm. Everything is spaced by this baseline: line-height, margin, padding and gap in `objects.mesh` and `objects.layout`.
 
@@ -78,7 +78,7 @@ $baseline: 8px !default;
 );
 ```
 
-## `$space-factors`
+## Space-factors
 
 The following map multiply the `$baseline` to consistent and transparent spacing names.
 
