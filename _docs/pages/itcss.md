@@ -1,5 +1,5 @@
 ---
-layout: layouts/lithe/itcss.njk
+layout: layouts/lithe/pattern.njk
 tags:
 title: ITCSS
 metaDesc: ITCSS description
@@ -10,3 +10,7 @@ eleventyNavigation:
 ---
 
 ITCSS text
+
+{% image "./_docs/assets/images/itcss.svg", "A diagram displaying ITCSS methodologies layers" %}
+
+{% image "./_docs/assets/images/itcss-specificity-graph.svg", "A graph displaying ideal specificity when using ITCSS methodology" %}
