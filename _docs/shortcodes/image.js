@@ -7,7 +7,7 @@ module.exports = async function imageShortcode(src, alt) {
     widths: [320, 480, 640, 768, 1114, null],
     urlPath: '/assets/media/', // set this to make images show up
     outputDir: './dist/assets/media/',
-    formats: ['avif', 'webp', 'png'],
+    formats: src.includes('.svg') ? ['svg'] : ['avif', 'webp', 'jpeg'],
   });
 
   let imageAttributes = {
