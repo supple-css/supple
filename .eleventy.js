@@ -23,6 +23,9 @@ module.exports = function (config) {
   config.addPlugin(eleventyNavigationPlugin);
   config.addPlugin(syntaxHighlight);
 
+  // passthrough
+  config.addPassthroughCopy({ '_docs/assets/fonts': 'assets/fonts' });
+
   // Base eleventyConfig
   return {
     dir: {
