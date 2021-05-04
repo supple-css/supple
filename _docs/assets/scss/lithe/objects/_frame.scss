@@ -44,7 +44,7 @@
   }
 
   .o-frame__body {
-    flex: 0 1 75ch;
+    flex: 0 1 rem.convert(840px);
     min-inline-size: 0;
     margin-block-start: space.get('base');
     margin-inline-end: space.get('base');
