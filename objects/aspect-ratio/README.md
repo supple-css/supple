@@ -26,35 +26,6 @@ For use with multi-media embeds such as videos, images or slideshows, that need 
 
 ## Use
 
-You can overwrite the SCSS variables the following way in your `_vars.scss`:
-
-```scss
-@use '@supple-kit/supple-css/objects/aspect-ratio/variables' with (
-  $ratios: (
-    (4:3),
-    (16:9),
-  ),
-);
-```
-
-And then include the module in your `styles.scss` manifest file:
-
-```scss
-@use 'node_modules/@supple-kit/supple-css/objects/aspect-ratio';
-```
-
-Alternatively you can also directly override the variables from your manifest file:
-
-```scss
-@use '@supple-kit/supple-css/objects/aspect-ratio' with (
-  $ratios: (
-    (4:3),
-    (16:9),
-  ),
-);
-```
-
-Then you can apply the classes to the HTML.
 By default the aspect ratio container has a ratio of `1:1`, a perfect square.
 
 ```html
@@ -140,9 +111,9 @@ HTML would look like this:
 **On the `.o-aspect-ratio` block**
 
 - `.o-aspect-ratio`: core aspect ratio block
-- `.o-aspect-ratio--4by3`: creates a embed with an aspect ratio of 4 by 3 (configurable in `$ratios` SCSS variable)
-- `.o-aspect-ratio--16by9`: creates a embed with an aspect ratio of 16 by 9 (configurable in `$ratios` SCSS variable)
-- `.o-aspect-ratio--2by1`: creates a embed with an aspect ratio of 2 by 1 (configurable in `$ratios` SCSS variable)
+- `.o-aspect-ratio--4by3`: creates a embed with an aspect ratio of 4 by 3
+- `.o-aspect-ratio--16by9`: creates a embed with an aspect ratio of 16 by 9
+- `.o-aspect-ratio--2by1`: creates a embed with an aspect ratio of 2 by 1
 
 ## Configurable variables
 

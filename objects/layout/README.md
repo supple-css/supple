@@ -55,50 +55,189 @@ For more granular control over layout make use of modifiers, custom properties o
 
 ### Modifiers on `o-layout`
 
+#### `o-layout--fit`
+
+All items shrink to their own width.
+
 ```html
-<div
-  class="o-layout  [o-layout--align-inline-center  |  o-layout--align-inline-end  |  o-layout--align-block-center  |  o-layout--align-block-end  |  o-layout--fill  |  o-layout--fit  |  o-layout--stretch  |  o-layout--gap-base]"
->
-  <div><!-- content --></div>
-  <div><!-- content --></div>
+<div class="o-layout  o-layout--fit">
   <div><!-- content --></div>
   <div><!-- content --></div>
 </div>
 ```
 
+<div class="o-fixture">
+  <div class="o-layout  o-layout--fit">
+    <div class="o-fixture__box">fit</div>
+    <div class="o-fixture__box">fit</div>
+  </div>
+</div>
+
+#### `o-layout--align-inline-center`
+
+All items align to the center of the inline axis.
+
+```html
+<div class="o-layout  o-layout--fit  o-layout--align-inline-center">
+  <div><!-- content --></div>
+  <div><!-- content --></div>
+</div>
+```
+
+<div class="o-fixture">
+  <div class="o-layout  o-layout--fit  o-layout--align-inline-center">
+    <div class="o-fixture__box">fit</div>
+    <div class="o-fixture__box">fit</div>
+  </div>
+</div>
+
+#### `o-layout--align-inline-end`
+
+All items align to the end of the inline axis.
+
+```html
+<div class="o-layout  o-layout--fit  o-layout--align-inline-end">
+  <div><!-- content --></div>
+  <div><!-- content --></div>
+</div>
+```
+
+<div class="o-fixture">
+  <div class="o-layout  o-layout--fit  o-layout--align-inline-end">
+    <div class="o-fixture__box">fit</div>
+    <div class="o-fixture__box">fit</div>
+  </div>
+</div>
+
+#### `o-layout--align-block-center`
+
+All items align to the center of the inline axis.
+
+```html
+<div class="o-layout  o-layout--fit  o-layout--align-block-center">
+  <div><!-- content --></div>
+  <div><!-- content --></div>
+</div>
+```
+
+<div class="o-fixture">
+  <div class="o-layout  o-layout--fit  o-layout--align-block-center">
+    <div class="o-fixture__box">fit<br>fit</div>
+    <div class="o-fixture__box">fit</div>
+  </div>
+</div>
+
+#### `o-layout--align-block-end`
+
+All items align to the end of the inline axis.
+
+```html
+<div class="o-layout  o-layout--fit  o-layout--align-block-end">
+  <div><!-- content --></div>
+  <div><!-- content --></div>
+</div>
+```
+
+<div class="o-fixture">
+  <div class="o-layout  o-layout--fit  o-layout--align-block-end">
+    <div class="o-fixture__box">fit<br>fit</div>
+    <div class="o-fixture__box">fit</div>
+  </div>
+</div>
+
+#### `o-layout--stretch`
+
+All items are rendered equal in height.
+
+```html
+<div class="o-layout  o-layout--fit  o-layout--stretch">
+  <div><!-- content --></div>
+  <div><!-- content --></div>
+</div>
+```
+
+<div class="o-fixture">
+  <div class="o-layout  o-layout--fit  o-layout--stretch">
+    <div class="o-fixture__box">fit<br>fit</div>
+    <div class="o-fixture__box">fit</div>
+  </div>
+</div>
+
+#### `o-layout--gap-X`
+
+Do you want a gap between the items? You can! By default you can render a gap equal to `space.get('base')`. You can make more gaps available by adding spacing names to the `$gaps` variable.
+
+```html
+<div class="o-layout  o-layout--fit  o-layout--gap-base">
+  <div><!-- content --></div>
+  <div><!-- content --></div>
+</div>
+```
+
+<div class="o-fixture">
+  <div class="o-layout  o-layout--fit  o-layout--gap-base">
+    <div class="o-fixture__box">fit<br>fit</div>
+    <div class="o-fixture__box">fit</div>
+  </div>
+</div>
+
 ### Elements
+
+You can individually control the items aswell.
+
+#### `o-layout__fit` & `o-layout__fill`
 
 ```html
 <div class="o-layout">
   <div class="o-layout__fit">Fit to content</div>
-  <div class="o-layout__fill">Take up remaining space</div>
-  <div class="o-layout__align-inline-center">Center align a single cell</div>
+  <div class="o-layout__fill">Fill up remaining space</div>
 </div>
 ```
 
-### Works with `u-columns-X` on `o-layout`
+<div class="o-fixture">
+  <div class="o-layout  o-layout--gap-base">
+    <div class="o-fixture__box  |  o-layout__fit">fit</div>
+    <div class="o-fixture__box  |  o-layout__fill">fill</div>
+  </div>
+</div>
+
+#### `o-layout__align-inline-center`
+
+Center align a single item.
+
+```html
+<div class="o-layout">
+  <div class="o-layout__align-inline-center">center</div>
+</div>
+```
+
+<div class="o-fixture">
+  <div class="o-layout  o-layout--fit">
+    <div class="o-fixture__box  |  o-layout__align-inline-center">center</div>
+  </div>
+</div>
+
+### Work with columns by the `u-columns`, `u-colspan` and `u-offset` utilities
+
+By default a `o-layout` container has 12 columns, but you can change that with the `u-columns` utility. You can specify how many columns a layout item needs to span with the `u-colspan` utility.
 
 ```html
 <div class="o-layout  u-columns-10">
-  <div class="u-colspan-5">Spans 5 of 10 columns</div>
+  <div class="u-colspan-4">Spans 4 of 10 columns</div>
+  <div class="u-colspan-6">Spans 6 of 10 columns</div>
+  <div class="u-colspan-6  |  u-offset-4">
+    Pushes 4 and spans 6 of 10 columns
+  </div>
 </div>
 ```
 
-### Works with `u-colspan-X` on the flex item
-
-```html
-<div class="o-layout">
-  <div class="u-colspan-5">Spans 5 of 12 columns</div>
+<div class="o-fixture">
+  <div class="o-layout  |  u-columns-10">
+    <div class="o-fixture__box  |  u-colspan-4">4 of 10</div>
+    <div class="o-fixture__box  |  u-colspan-6">6 of 10</div>
+    <div class="o-fixture__box  |  u-colspan-6  |  u-offset-4">6 of 10</div>
+  </div>
 </div>
-```
-
-### Works with `u-offset-X` on the flex item
-
-```html
-<div class="o-layout">
-  <div class="u-colspan-8  u-offset-4">Offsets 4 of 12 columns</div>
-</div>
-```
 
 ### Custom properties
 
@@ -155,6 +294,17 @@ By default, the cell styling is applied to the direct child. If for any reason t
 <div class="o-layout">
   <div class="o-layout__cell  u-colspan-8  u-offset-4">// your component</div>
   <div class="o-layout__cell">// your component</div>
+</div>
+```
+
+```html
+<div
+  class="o-layout  [o-layout--align-inline-center  |  o-layout--align-inline-end  |  o-layout--align-block-center  |  o-layout--align-block-end  |  o-layout--fill  |  o-layout--fit  |  o-layout--stretch  |  o-layout--gap-base]"
+>
+  <div><!-- content --></div>
+  <div><!-- content --></div>
+  <div><!-- content --></div>
+  <div><!-- content --></div>
 </div>
 ```
 

@@ -49,6 +49,10 @@
 /*  Utilities
 /   ========================================================================= */
 
+@use "utilities/columns";
+@use "utilities/colspan";
+@use "utilities/colstart";
+@use "utilities/offset";
 @use "utilities/visually-hidden";
 
 /*  logo
