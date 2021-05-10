@@ -1,0 +1,12 @@
+[build]
+  command = "npm run docs:build"
+  publish = "dist"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Content-Security-Policy = "default-src 'self'; style-src 'unsafe-inline'; script-src 'unsafe-inline'; worker-src 'self';"
+    X-Frame-Options = "SAMEORIGIN"
+    X-XSS-Protection = "1"
+    X-Content-Type-Options = "nosniff"
+    Permissions-Policy = "interest-cohort=()"
